@@ -4,7 +4,7 @@
 
 # Nest js API template with Mongo DB
 
-1. cd to backend/v1
+1. Open terminal at root folder
 2. install project 
 ```
 npm i
