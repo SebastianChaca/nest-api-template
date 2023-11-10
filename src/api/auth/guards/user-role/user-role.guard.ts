@@ -7,7 +7,7 @@ import {
 } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
 import { Observable } from 'rxjs';
-import { META_ROLES } from 'src/auth/decorators/role-protected.decorator';
+import { META_ROLES } from 'src/api/auth/decorators/role-protected.decorator';
 import { User } from 'src/api/user/entities/user.entity';
 
 @Injectable()
@@ -29,9 +29,7 @@ export class UserRoleGuard implements CanActivate {
 
     if (!user) throw new BadRequestException('User not found');
 
-    for (const role of user.roles) {
-      if (validRoles.includes(role)) return true;
-    }
+    if (validRoles.includes(user.roles)) return true;
 
     throw new ForbiddenException('Invalid credentials');
   }

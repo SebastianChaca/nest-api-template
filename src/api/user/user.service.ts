@@ -3,7 +3,7 @@ import { CreateUserDto } from './dto/create-user.dto';
 import { InjectModel } from '@nestjs/mongoose';
 import { User } from './entities/user.entity';
 import { Model } from 'mongoose';
-import { AuthService } from 'src/auth/auth.service';
+import { AuthService } from 'src/api/auth/auth.service';
 
 @Injectable()
 export class UserService {
